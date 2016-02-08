@@ -33,20 +33,25 @@ private int intentos;
 	string respuesta="s";
 	int n=0;
 	int intentos=1;
-		while(respuesta=="s")
-		{
-			stdout.printf("dime un número:");
-			n=int.parse(stdin.read_line());
-			if(n==num)
+			while(respuesta=="s")
 			{
-				guardar(intentos,nombre,lista);		
-			}else
-			{
-				stdout.printf("Quieres volver a intentarlo? :");
-				respuesta=stdin.read_line();
-				intentos++;
+				stdout.printf("dime un número:");
+				n=int.parse(stdin.read_line());
+				if(n==num)
+				{
+					guardar(intentos,nombre,lista);		
+				}else
+				{
+					stdout.printf("Quieres volver a intentarlo? :");
+					respuesta=stdin.read_line();
+					intentos++;
+				}
+				if(intentos==4)
+				{
+					stdout.stdout.printf("Has sobrepasado el número de intentos maximo");
+					respuesta=="n";
+				}
 			}
-		}
 	}
 	public static void guardar(int intentos,string nombre,Gee.ArrayList<ejemplo1> lista)
 	{
